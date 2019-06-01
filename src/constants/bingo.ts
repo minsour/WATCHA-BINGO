@@ -1,0 +1,21 @@
+const BOARD_SIZE = 5;
+enum BINGO_TYPE {
+  COL,
+  ROW,
+  CROSS
+}
+enum GAME_MODE {
+  SINGLE,
+  MULTI
+}
+enum PLAYER {
+  PLAYER_ONE,
+  PLAYER_TWO
+}
+
+export {
+  BOARD_SIZE,
+  BINGO_TYPE,
+  GAME_MODE,
+  PLAYER,
+}

@@ -1,20 +1,28 @@
 import * as React from 'react';
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import { Provider } from 'mobx-react';
+import Main from './pages/main';
+import Single from './pages/single';
+import Multi from './pages/multi';
+import { RootStore } from './stores';
 
-import logo from './logo.svg';
+const rootStore = new RootStore()
 
 class App extends React.Component {
-  public render() {
+  render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
+      <Provider {...rootStore}>
+        <Router>
+          <div>
+            <Switch>
+                <Route exact={true} path='/' component={Main} />
+                <Route path='/single' component={Single} />
+                <Route path='/multi' component={Multi} />
+              </Switch>
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }

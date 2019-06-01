@@ -1,0 +1,11 @@
+.ClickedCell {
+  background-color: blue;
+  width: 5vw;
+  height: 5vw;
+}
+
+.UnclickedCell {
+  background-color: white;
+  width: 5vw;
+  height: 5vw;
+}
